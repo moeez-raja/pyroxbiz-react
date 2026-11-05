@@ -1,0 +1,276 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-heading: var(--font-sans);
+    --font-sans: 'Geist Variable', sans-serif;
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.49 0.13 161);
+    --primary-foreground: oklch(0.99 0.01 160);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.975 0.008 160);
+    --muted-foreground: oklch(0.48 0.025 160);
+    --accent: oklch(0.95 0.035 160);
+    --accent-foreground: oklch(0.35 0.09 160);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.62 0.14 161);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --radius: 0.625rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    background-color: #f3f7f5;
+    background-image:
+      radial-gradient(ellipse at 18% 0%, rgb(16 185 129 / 8%), transparent 32rem),
+      radial-gradient(ellipse at 95% 18%, rgb(20 184 166 / 6%), transparent 28rem);
+    background-attachment: fixed;
+    }
+  html {
+    @apply font-sans;
+    }
+}
+
+.page-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgb(16 185 129 / 20%);
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(ellipse at 88% 18%, rgb(52 211 153 / 25%), transparent 22rem),
+    linear-gradient(118deg, #ecfdf5 0%, #fff 50%, #f0fdfa 100%);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  box-shadow: 0 16px 40px -32px rgb(6 78 59 / 42%);
+}
+
+.page-hero::after {
+  position: absolute;
+  z-index: -1;
+  top: -5.5rem;
+  right: -3rem;
+  width: 16rem;
+  height: 16rem;
+  border: 1px solid rgb(5 150 105 / 13%);
+  border-radius: 9999px;
+  box-shadow: 0 0 0 1.5rem rgb(5 150 105 / 3%), 0 0 0 3rem rgb(5 150 105 / 2%);
+  content: "";
+  pointer-events: none;
+}
+
+.page-hero h1 {
+  position: relative;
+  font-size: clamp(1.8rem, 4vw, 2.45rem);
+  font-weight: 720;
+  letter-spacing: -0.055em;
+  line-height: 1.08;
+}
+
+.page-hero p {
+  position: relative;
+}
+
+.page-hero > :first-child {
+  position: relative;
+  z-index: 1;
+}
+
+button[data-slot="button"][data-variant="default"] {
+  background-image: linear-gradient(115deg, #047857, #059669 58%, #0d9488);
+  box-shadow: 0 7px 16px -10px rgb(4 120 87 / 75%);
+}
+
+button[data-slot="button"][data-variant="default"]:hover:not(:disabled) {
+  filter: brightness(1.07);
+  box-shadow: 0 9px 20px -10px rgb(4 120 87 / 78%);
+}
+
+.workspace-card {
+  border-color: rgb(203 213 225 / 72%) !important;
+  border-radius: 1.15rem !important;
+  box-shadow: 0 4px 18px -14px rgb(15 23 42 / 25%);
+}
+
+main input:not([type="checkbox"]),
+main select,
+main textarea {
+  border-color: #d7e2dd;
+  background-color: rgb(255 255 255 / 92%);
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+main input:not([type="checkbox"]):focus,
+main select:focus,
+main textarea:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgb(16 185 129 / 12%);
+  outline: none;
+}
+
+@media (hover: hover) {
+  .workspace-card {
+    transition: box-shadow 180ms ease, border-color 180ms ease, transform 180ms ease;
+  }
+
+  .workspace-card:hover {
+    border-color: rgb(110 231 183 / 70%) !important;
+    box-shadow: 0 16px 28px -24px rgb(6 78 59 / 35%);
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+
+  html,
+  body {
+    min-width: 0 !important;
+    background: #fff !important;
+    background-image: none !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  .invoice-print-root,
+  .invoice-print-root * {
+    visibility: visible !important;
+  }
+
+  .invoice-print-root {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 99999 !important;
+    display: block !important;
+    overflow: visible !important;
+    background: #fff !important;
+    padding: 0 !important;
+  }
+
+  .invoice-print-paper {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .invoice-print-actions {
+    display: none !important;
+  }
+
+  .invoice-print-paper tr,
+  .invoice-print-paper .invoice-print-block {
+    break-inside: avoid;
+  }
+}
